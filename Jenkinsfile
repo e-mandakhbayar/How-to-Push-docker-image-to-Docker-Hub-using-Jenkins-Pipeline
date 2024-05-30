@@ -1,8 +1,8 @@
 pipeline{
 
-	agent {
-    		docker { image 'node:20-alpine' }
-  	}
+	agent any
+
+	
 
 	stages {
 	    
@@ -12,6 +12,10 @@ pipeline{
 				git 'https://github.com/shazforiot/nodeapp_test'
 			}
 		}
+		 stage('Initialize'){
+        		def dockerHome = tool 'myDocker'
+        		env.PATH = "${dockerHome}/bin:${env.PATH}"
+    }
 
 		stage('Build') {
 

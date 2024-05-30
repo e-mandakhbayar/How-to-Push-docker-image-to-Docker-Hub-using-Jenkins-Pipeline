@@ -9,7 +9,7 @@ pipeline{
 	    stage('gitclone') {
 
 			steps {
-				git 'https://github.com/shazforiot/nodeapp_test.git'
+				git 'https://github.com/e-mandakhbayar/How-to-Push-docker-image-to-Docker-Hub-using-Jenkins-Pipeline'
 			}
 		}
 
